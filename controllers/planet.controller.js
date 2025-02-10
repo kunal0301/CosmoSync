@@ -1,4 +1,3 @@
-const Planet = require('../models/planet.model');
 const Planets = require('../models/planet.model');
 
 const getPlanet = async(req, res) => {

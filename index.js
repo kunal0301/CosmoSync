@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config({path: './.env'});
 const planetRoute = require('./routes/planet.route');
 const app = express();
 
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/planet', planetRoute);
 
-mongoose.connect('mongodb://127.0.0.1:27017/planet')
+mongoose.connect(process.env.DB_URL)
     .then(() => {
         console.log("Database Connected!");
         app.listen(3000, ()=> {
