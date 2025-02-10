@@ -25,3 +25,6 @@ mongoose.connect(process.env.DB_URL)
     .catch((error) => {
         console.log("Database not connected", error.message);
     })
+
+
+module.exports = app;
